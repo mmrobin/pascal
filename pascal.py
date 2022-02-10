@@ -82,13 +82,17 @@ def pascalMod(rowCount, n, PRINT=True):
             rowValues = triangle[rowNumber+1]
             rowString = ""
             for value in rowValues:
-                rowString = rowString + str(value) + " "
+                if value != 0:
+                    value = "\u2588\u2588"
+                else:
+                    value = "  "
+                rowString = rowString + str(value)
             trianglePrint[rowNumber+1] = rowString
 
         centering = len(trianglePrint[rowCount])
         for row in trianglePrint:
             printRow = trianglePrint[row].center(centering * 2)
-            print(printRow)
+            print(printRow + str(row))
     
     return triangle
 
