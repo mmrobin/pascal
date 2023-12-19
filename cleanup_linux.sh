@@ -16,12 +16,14 @@ msg2="Delete these files (Y/n)? "
 msgY="Deleted $fileCount files. Exiting..."
 msgN="No files were deleted. Exiting..."
 
+# error message
 msgE="Bad input. No files were deleted. Exiting..."
 
 echo $msg1
 echo $msg2
 read yn
 
+# treat the input by cases, with error handling
 case $yn in
     [Yy])
         rm pMod*-*r.png
